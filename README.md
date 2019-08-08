@@ -1,17 +1,18 @@
+## Announcements 
 * If you are developer using those services, both are blocked by default. 
 `data.mob.com, google-analytics, googleadservices, amazon-adsystem, crashlytics.com analytics.yahoo, doubleclick.net, hm.baidu.com, etc.. `
 
-* Japan server has been reinstall and updated to Vultr High frequency VPS for faster speed at August 2, 2019 🥳
-
-* Germany server has been reinstall at August 2, 2019 🥳
-
-* Switzerland server is online, DoT added Port 443, 853 (July 19, 2019) 🥂 
+* Futureplan
+ - [ ] develop an API for each server monitor if resolver is down. 
 
 * Germany and Japan server certs both renewed at August 2, 2019 🥳
 
+* Japan & Germany server has been reinstall and Japan server updated to Vultr High frequency VPS for faster speed at August 2, 2019 🥳
+
+* Switzerland server is online, DoT added Port 443, 853 (July 19, 2019) 🥂 
+
 * For more old announcements, go [here](https://github.com/fun-ed/blahdns/issues/36)
 
-* Chrome on Android leaking DNS, check [HERE](https://github.com/fun-ed/blahdns/blob/master/FAQ.md) to fix.
 
 ## Our features
 * Block Trackers, Ads, Malware, Phishing
