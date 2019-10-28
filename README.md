@@ -1,6 +1,6 @@
 ## Announcements
 
-**BlahDNS can resolve `.eth .ygg. i❤.ws` tld. [http://matoken.eth/] | [http://mesh.ygg] | (I2p on Yggdrasil)[http://i2pd.ygg/] | [http://blahdns.oss] | [https://i❤.ws]**
+**BlahDNS can resolve `.eth .ygg. i❤.ws` tld. http://matoken.eth/ | http://mesh.ygg/ | http://i2pd.ygg/ | http://blahdns.oss/ | https://i❤.ws/**
 
 **Switerland 🇨🇭 server will be shutdown at the END of December 31 2019 !!!!**
 
@@ -62,9 +62,6 @@ https://gist.github.com/fun-ed/c8fba46fe1dbcc8152e3231f53f91e86
 1. [Knot-resolver](https://github.com/CZ-NIC/knot-resolver)
 2. [m13253](https://github.com/m13253/dns-over-https)
 3. [DNSPrivacy.org](https://dnsprivacy.org)
-
-## Site found which try to block DoH / DoT / Dnscrypt
-1. https://forum.opnsense.org/index.php?PHPSESSID=s1mi1kp08r1c5lrr57rfklbtu0&topic=12238.0 (opensense)
 
 ## Disclaimer
 * This is an experimental service, I'm not responsible for any down-time.
