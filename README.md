@@ -1,3 +1,5 @@
+[![HitCount](http://hits.dwyl.io/fun-ed/blahdns.svg)](http://hits.dwyl.io/fun-ed/blahdns)
+
 ## Announcements
 
 **BlahDNS can resolve `.eth .ygg. i❤.ws` tld. http://matoken.eth/ | http://mesh.ygg/ | http://i2pd.ygg/ | http://blahdns.oss/ | https://i❤.ws/**
