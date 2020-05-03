@@ -1,5 +1,6 @@
+ [![HitCount](http://hits.dwyl.io/fun-ed/blahdns.svg)](http://hits.dwyl.io/fun-ed/blahdns) 
+ 
 <p align="center">
-  [![HitCount](http://hits.dwyl.io/fun-ed/blahdns.svg)](http://hits.dwyl.io/fun-ed/blahdns) 
   &nbsp;&nbsp;
   All donations are welcome and any amount of money will help me to maintain this project 🥰 
 </p> 
