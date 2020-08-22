@@ -64,9 +64,9 @@ Config: [HERE for more details](https://github.com/fun-ed/blahdns/tree/master/se
 ## Server architecture
 
 ```bash
-Server (May 3, 2020 -- Germany, Japan, Finland, Singapore)
+Server (Germany, Japan, Finland, Singapore)
 |-- Let's Encrypt SSL
-|-- Knot-resolver (OpenNIC, ICANN)
+|-- Knot-resolver (OpenNIC, ICANN, Yggdrasil, ETH)
 |   |-- DNSCryptv2 (dnsdist, port 8443)
 |   |-- doh-server (DoH, GET, POST -- m13253)
 |   |-- |-- DoH (HAProxy, port 443, TLS 1.3, require SNI)
