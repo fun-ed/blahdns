@@ -1,4 +1,4 @@
- [![HitCount](http://hits.dwyl.io/fun-ed/blahdns.svg)](http://hits.dwyl.io/fun-ed/blahdns) 
+ [![HitCount](http://hits.dwyl.io/fun-ed/blahdns.svg)](http://hits.dwyl.io/fun-ed/blahdns) | [![Stargazers over time](https://starchart.cc/fun-ed/blahdns.svg)](https://starchart.cc/fun-ed/blahdns)
  
 <p align="center">
   &nbsp;&nbsp;
