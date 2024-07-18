@@ -26,7 +26,7 @@ Config: [HERE for more details](https://github.com/fun-ed/blahdns/tree/master/se
 ## Server architecture
 
 ```bash
-Server (Switzerland, Germany, Japan, Singapore)
+Server
 
 |-- Knot-resolver (DNS resolver, OpenNIC, ICANN, Alfis)
 |-- Dnsdist (cache)
