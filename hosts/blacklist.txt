@@ -1,5 +1,10 @@
 
+# Claude code
+http-intake.logs.us5.datadoghq.com
 http-intake.logs.datadoghq.eu
+o540343.ingest.sentry.io
+warpianwzlfqdq.dataplane.rudderstack.com
+dataplane.rudderstack.com
 
 # scam invesment in chinese, taiwan
 ## agw-ms 投資
