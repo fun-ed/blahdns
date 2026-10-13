@@ -1,10 +1,10 @@
 ## Android DoT / DoH config
 
-Go [HERE](https://github.com/zoonderkins/blahdns/blob/master/client-conf/DoT-or-DoH-Android.md)
+Go [HERE](https://github.com/fun-ed/blahdns/blob/master/client-conf/DoT-or-DoH-Android.md)
 
 ## Dnscrypt-proxy
 
-Go [HERE](https://github.com/zoonderkins/blahdns/tree/master/client-conf/dnscrypt)
+Go [HERE](https://github.com/fun-ed/blahdns/tree/master/client-conf/dnscrypt)
 
 ## Knot-resolver
 
@@ -27,18 +27,18 @@ policy.add(policy.all(policy.TLS_FORWARD({{'78.46.244.143@853', hostname='dot-de
 
 ## Unbound 
 
-Go [HERE](https://github.com/zoonderkins/blahdns/blob/master/client-conf/unbound.conf)
+Go [HERE](https://github.com/fun-ed/blahdns/blob/master/client-conf/unbound.conf)
 
 ## Stubby
 
-Go [HERE](https://github.com/zoonderkins/blahdns/tree/master/client-conf/stubby)
+Go [HERE](https://github.com/fun-ed/blahdns/tree/master/client-conf/stubby)
 
 
 ## Windows
 Simplednscrypt -> https://simplednscrypt.org/ and install
 
-![](https://github.com/zoonderkins/blahdns/raw/master/client-conf/img-source/blahdns-1.png?raw=true)
-![](https://github.com/zoonderkins/blahdns/raw/master/client-conf/img-source/blahdns-2.png?raw=true)
+![](https://github.com/fun-ed/blahdns/raw/master/client-conf/img-source/blahdns-1.png?raw=true)
+![](https://github.com/fun-ed/blahdns/raw/master/client-conf/img-source/blahdns-2.png?raw=true)
 
 ## Kdig
 ```bash

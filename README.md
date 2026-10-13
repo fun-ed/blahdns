@@ -4,13 +4,21 @@
   <br> All donations are welcome and any amount of money will help me to maintain this project 🥰 
 </p> 
 
+## Repository moved
+
+> The original GitHub account `zoonderkins`was suspended by GitHub, so `github.com/zoonderkins/blahdns` is no longer reachable.
+> This project is now maintained at [github.com/fun-ed/blahdns](https://github.com/fun-ed/blahdns), re-published with the full commit history.
+> Issues, gists, and stars from the old account could not be migrated.
+>
+> 原 GitHub 帳號 `zoonderkins`遭 GitHub 停權，原 repo 已無法存取；本專案改由 `fun-ed` 帳號重新公開，並保留完整 commit 歷史。舊帳號的 issues、gists 與 stars 無法搬移。
+
 ## Announcements
 
 * Our DNS service has been blocked due to Taiwan RPZ policy
 * We had migrated SSL CA from Buypass GO to Google CA. (2025/09/27)
 * We had migrated DNS Stack to Knot-resolver + dnsdist
 * Beta support `alfis.name` tld. `.anon, .btn, .conf, .index, .merch, .mirror, .mob, .screen, .srv, .ygg`
-* For more old announcements, go [here](https://github.com/zoonderkins/blahdns/issues/36)
+* Old announcements were kept in issue #36 on the suspended `zoonderkins/blahdns` repository and are no longer available.
 
 
 ## Our features
@@ -22,7 +30,7 @@
 
 
 ## How to setup / config DoH DoT Dnscrypt 👇
-Config: [HERE for more details](https://github.com/zoonderkins/blahdns/tree/master/server-conf)
+Config: [HERE for more details](https://github.com/fun-ed/blahdns/tree/master/server-conf)
 
 
 ## Server architecture
@@ -40,15 +48,15 @@ Server
 ```
 
 ## Config file / Client
-* Collection of blocklist use in BlahDNS: [Source](https://github.com/zoonderkins/blahdns/raw/master/hosts/source.txt) 
-* Yggdrasil IPv6 Network: [Setup guide](https://github.com/zoonderkins/blahdns/blob/master/client-conf/yggdrasil.md)
+* Collection of blocklist use in BlahDNS: [Source](https://github.com/fun-ed/blahdns/raw/master/hosts/source.txt) 
+* Yggdrasil IPv6 Network: [Setup guide](https://github.com/fun-ed/blahdns/blob/master/client-conf/yggdrasil.md)
 * Android DoH/DoT: [Nebulo App](https://play.google.com/store/apps/details?id=com.frostnerd.smokescreen) | [personalDNSfilter App](https://zenz-solutions.de/personaldnsfilter/) | [Intra](https://play.google.com/store/apps/details?id=app.intra)
 * iOS Dnscryptv2/DoH: [Dnscloak](https://itunes.apple.com/app/dnscloak-secure-dns-client/id1452162351)
 * Dnscryptv2: [dnscrypt-proxy](https://github.com/DNSCrypt/dnscrypt-proxy)
-* Config files: [ Client config example ](https://github.com/zoonderkins/blahdns/tree/master/client-conf)
+* Config files: [ Client config example ](https://github.com/fun-ed/blahdns/tree/master/client-conf)
 
 ## Awesome dns-resolver
-https://gist.github.com/zoonderkins/c8fba46fe1dbcc8152e3231f53f91e86
+The previous list was a gist on the suspended `zoonderkins` account and is no longer available.
 
 ## Huge thanks to those OSS and ORG
 1. [Knot-resolver](https://github.com/CZ-NIC/knot-resolver)
@@ -67,4 +75,4 @@ https://gist.github.com/zoonderkins/c8fba46fe1dbcc8152e3231f53f91e86
 * Use at your own risk. Under no circumstances will the operator be held responsible or liable in any way for any claims, damages, losses, expenses, costs or liabilities whatsoever (including, without limitation, any direct or indirect damages for loss of profits, business interruption or loss of information) resulting or arising directly or indirectly from accessing or otherwise using this service (Blahdns server).
 * By using this website and service you consent to the disclaimer and agree to its terms and conditions.
 
-[![Stargazers over time](https://starchart.cc/zoonderkins/blahdns.svg)](https://starchart.cc/zoonderkins/blahdns)
+[![Stargazers over time](https://starchart.cc/fun-ed/blahdns.svg)](https://starchart.cc/fun-ed/blahdns)

@@ -1,6 +1,6 @@
 ## Blocklist use on BlahDNS
 
-* [Block list sources](https://github.com/zoonderkins/blahdns/raw/master/hosts/source.txt)
+* [Block list sources](https://github.com/fun-ed/blahdns/raw/master/hosts/source.txt)
 
 * [xiaomi-list](https://gist.github.com/232057d3562bffc31daa7739dfdb4469)
 
