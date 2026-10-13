@@ -13,13 +13,13 @@ debug = err
 [blahdns-dns]
 client = yes
 accept = 127.0.0.1:5353
-connect = 139.162.112.47 #Japan
+connect = dot-de.blahdns.com:853
 
 verifyChain = yes
 CApath = /etc/ssl/certs
 
-checkHost = dot-jp.blahdns.com
-````
+checkHost = dot-de.blahdns.com
+```
 
 ### Test
 ```bash

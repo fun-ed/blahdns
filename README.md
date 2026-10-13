@@ -14,6 +14,8 @@
 
 ## Announcements
 
+* Japan, Switzerland and Finland servers were discontinued on 2024-07-15; their old configs are in [Archived/legacy-servers](Archived/legacy-servers/README.md).
+* DNS-over-HTTPS accepts POST requests only (RFC 8484 wire format). DNS-over-TLS is served on port 853 only. (2026/10/14)
 * Our DNS service has been blocked due to Taiwan RPZ policy
 * We had migrated SSL CA from Buypass GO to Google CA. (2025/09/27)
 * We had migrated DNS Stack to Knot-resolver + dnsdist
@@ -26,7 +28,7 @@
 * Block Trackers, Ads, Malwares, Phishing
 * No ECS, DNSSEC ready, No logs, OpenNIC, Eth TLD, Yggdrasil 
 * Support http://matoken.eth/ | http://mesh.ygg/ | http://i2pd.ygg/ | http://blahdns.oss/ | https://i❤.ws/
-* BlahDNS status [Status Page](https://stats.blahdns.com) | [Dnsprivacy.org]([https://dnsprivacy.org/jenkins/job/dnsprivacy-monitoring/](https://monitor.dnsprivacy.org/jenkins/job/dnsprivacy-monitoring/))
+* BlahDNS status: [Status Page](https://stats.blahdns.com)
 
 
 ## How to setup / config DoH DoT Dnscrypt 👇
@@ -67,7 +69,7 @@ The previous list was a gist on the suspended `zoonderkins` account and is no lo
 <p align="center">  
   <a href="https://www.paypal.com/paypalme/okz5289tw?locale.x=en_GB"><img alt="Donate using Paypal" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"></a>
   &nbsp;&nbsp;
-  <a href='https://ko-fi.com/P5P4GPQ8' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi4.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+  <a href='https://ko-fi.com/cestsibon00' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.blahdns.com/kofi4.png' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 </p>
 
 ## DISCLAIMER

@@ -2,7 +2,7 @@
 
 * [Block list sources](https://github.com/fun-ed/blahdns/raw/master/hosts/source.txt)
 
-* [xiaomi-list](https://gist.github.com/232057d3562bffc31daa7739dfdb4469)
+* xiaomi-list: the gist is no longer available.
 
 ## Block list (may different from BlahDNS)
 

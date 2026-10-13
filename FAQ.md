@@ -1,11 +1,4 @@
 
-## DnscryptV1 (updated 2019-10-02 GMT +8) 
-```
-dnscrypt-proxy --provider-key=5384:E814:4314:293E:56DD:1B14:0A1E:F172:AD47:BDBA:1799:C895:7294:953D:034E:B5C7
-                 --resolver-address=108.61.201.119
-                 --provider-name=2.dnscrypt-cert.blahdns.com
-```
-
 ## IP / DNS leak test
 
 1. [bash.ws/dnsleak](https://bash.ws/dnsleak)
@@ -29,54 +22,33 @@ curl -6 https://ifconfig.co
 <img src="https://github.com/fun-ed/blahdns/raw/master/client-conf/img-source/disable-async-dns-on-android-chrome.jpg" alt="Your image title" width="250"/>
 
 
-## Troubleshoot 
+## Troubleshoot
+
+DoH accepts POST requests only (RFC 8484 wire format); GET requests return 403. DoT is served on port 853.
 
 ```
-// DNS dnsentropy check
+// DNS port randomness check
 dig +short porttest.dns-oarc.net TXT
-Answer: porttest.y.x.w.v.u.t.s.r.q.p.o.n.m.l.k.j.i.h.g.f.e.d.c.b.a.pt.dns-oarc.net.
-"159.69.198.101 is GREAT: 53 queries in 2.7 seconds from 53 ports with std dev 14045"
 
-// Browser test: 
-https://doh-de.blahdns.com/dns-query?name=example.net
-https://doh-jp.blahdns.com/dns-query?name=example.net
-https://doh2.blahdns.com/dns-query?ct=application/dns-json&name=google.de&type=A&edns_client_subnet=0.0.0.0/0
-https://doh1.blahdns.com/dns-query?ct=application/dns-json&name=google.de&type=AAAA&edns_client_subnet=0.0.0.0/0
-
-// curl with DoH 
-curl -H 'content-type: application/dns-message' -vL -v 'https://doh-jp.blahdns.com/dns-query?dns=AAABAAABAAAAAAAAA3d3dwdleGFtcGxlA2NvbQAAAQAB' | hexdump -C
-
-curl -H 'content-type: application/dns-message' -vL -v 'https://doh-de.blahdns.com/dns-query?dns=AAABAAABAAAAAAAAA3d3dwdleGFtcGxlA2NvbQAAAQAB' | hexdump -C
+// curl with DoH (POST)
+printf 'AAABAAABAAAAAAAAA3d3dwdleGFtcGxlA2NvbQAAAQAB' | base64 -d | curl -s -H 'content-type: application/dns-message' --data-binary @- https://doh-de.blahdns.com/dns-query | hexdump -C
+printf 'AAABAAABAAAAAAAAA3d3dwdleGFtcGxlA2NvbQAAAQAB' | base64 -d | curl -s -H 'content-type: application/dns-message' --data-binary @- https://doh-sg.blahdns.com/dns-query | hexdump -C
 
 // Kdig on Ubuntu, Debian
 apt install knot-dnsutils
 
-// Kdig TLS with port 853, port 443 force include SNI (updated on August 1, 2019)
+// DoT, port 853, with TLS certificate validation
+kdig -d @dot-de.blahdns.com +tls-ca +tls-host=dot-de.blahdns.com example.com
+kdig -d @dot-sg.blahdns.com +tls-ca +tls-host=dot-sg.blahdns.com example.com
 
-kdig @159.69.198.101 +tls example.com 
-kdig @2a01:4f8:1c1c:6b4b::1 +tls example.com 
+// DoH (POST)
+kdig @doh-de.blahdns.com +https=/dns-query example.com
 
-kdig @159.69.198.101 +tls -p 443 +tls-sni=dot-de.blahdns.com example.com 
-kdig @2a01:4f8:1c1c:6b4b::1 +tls -p 443 +tls-sni=dot-de.blahdns.com example.com 
-
-// TLS certificate validation 
-
-kdig -d @159.69.198.101 -p 443 +tls-sni=dot-de.blahdns.com +tls-ca +tls-host=dot-de.blahdns.com example.com
-kdig -d @2a0a:e5c0:2:2:0:c8ff:fe68:bf48 -p 443 +tls-sni=dot-de.blahdns.com +tls-ca +tls-host=dot-de.blahdns.com example.com
-
-```
-
-## Mac OSX Mojave use Openssl TLS 1.3 
-
-```
-brew upgrade
-brew install openssl@1.1
-
-// Put openssl tls 1.3 as first choice on zsh, paste it and restart terminal
-echo 'export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"' >> ~/.zshrc
+// DoQ, port 784
+kdig +quic -p 784 @dot-de.blahdns.com example.com
 
 // Debug DoH with TLS 1.3
-openssl s_client -state -debug -msg -connect doh-jp.blahdns.com:443 -tls1_3
+openssl s_client -connect doh-de.blahdns.com:443 -servername doh-de.blahdns.com -tls1_3
 ```
 
 ## DNSSEC validation test
@@ -140,4 +112,4 @@ chmod +x unixbench.sh
 ./unixbench.sh
 ```
 1. IPtables DNS DDOs attack: https://github.com/justvanbloom/dns-iptables-rules/blob/master/update_domain_blacklist.sh
-Vultr Cloudcompute vs High frequency -- [gist](https://gist.github.com/fun-ed/3b3494af632c19699f2cd1bb0ea1685e)
+Vultr Cloudcompute vs High frequency -- the gist was on the suspended account and is no longer available.

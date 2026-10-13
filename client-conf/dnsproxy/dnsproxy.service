@@ -11,7 +11,7 @@ Group=nobody
 StartLimitInterval=5
 StartLimitBurst=10
 
-ExecStart=/usr/local/bin/dnsproxy -l ::1 -l 127.0.0.1 -p 53 -u quic://dot-jp.blahdns.com:784 -u quic://dot-sg.blahdns.com:784 -f 1.0.0.2:53 -b 1.0.0.2:53 --refuse-any
+ExecStart=/usr/local/bin/dnsproxy -l ::1 -l 127.0.0.1 -p 53 -u quic://dot-de.blahdns.com:784 -u quic://dot-sg.blahdns.com:784 -f 1.0.0.2:53 -b 1.0.0.2:53 --refuse-any
 
 #StandardOutput=file:/var/log/AdGuardHome.out
 #StandardError=file:/var/log/AdGuardHome.err

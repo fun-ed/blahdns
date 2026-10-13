@@ -52,7 +52,8 @@ getdns_query @78.46.244.143 -s -L -A www.google.com
 
 ## Curl
 ```bash
-curl -H 'accept: application/dns-json' 'https://doh-jp.blahdns.com/dns-query?name=www.google.com&type=A'
+# DoH accepts POST only (RFC 8484 wire format)
+printf 'AAABAAABAAAAAAAAA3d3dwdleGFtcGxlA2NvbQAAAQAB' | base64 -d | curl -s -H 'content-type: application/dns-message' --data-binary @- https://doh-de.blahdns.com/dns-query | hexdump -C
 ```
 
 ## Facebook python doh-proxy
@@ -66,8 +67,8 @@ doh-client --domain doh-de.blahdns.com --qname google.com --qtype A
 ```bash
 nano /etc/systemd/resolved.conf
 
-DNS=478.46.244.143
-DNSOverTLS=opportunistic
+DNS=78.46.244.143#dot-de.blahdns.com
+DNSOverTLS=yes
 
 // Save and restart service
 sudo systemctl restart systemd-resolved

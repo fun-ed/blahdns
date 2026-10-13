@@ -3,7 +3,7 @@
 ## Configuration sample
 
 ```
-./dnsproxy -l ::1 -l 127.0.0.1 -p 53 -u quic://dot-jp.blahdns.com:784 -f 1.0.0.2:53 -b 1.0.0.2:53 --refuse-any
+./dnsproxy -l ::1 -l 127.0.0.1 -p 53 -u quic://dot-de.blahdns.com:784 -f 1.0.0.2:53 -b 1.0.0.2:53 --refuse-any
 ```
 
 Configuration above listen to localhost `ipv4` and `ipv6`, use `quic` as upstream, `-f` as fallback server, `-b` as bootstrap lookup (only affected when using DoT, DoH, DoQ)

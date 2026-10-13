@@ -12,4 +12,4 @@ Stubby dir: `/usr/local/etc/stubby`
 
 Stubby config example: [HERE](https://github.com/fun-ed/blahdns/blob/master/client-conf/stubby/stubby.yml)
 
-For more about Stubby, [HERE](https://dnsprivacy.org/wiki/pages/viewpage.action?pageId=3145812)
+For more about Stubby, [HERE](https://dnsprivacy.org/dns_privacy_daemon_-_stubby/)
