@@ -1,5 +1,4 @@
 // Edited Jun 27, 2019
-// Maintainer: @fun-ed
 // https://developer.mozilla.org/en-US/docs/Web/API/AbortController
 (function() {
   const url = "https://test.blahdns.com";

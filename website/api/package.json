@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ookanzheng/blahdns.git"
+    "url": "git+https://github.com/fun-ed/blahdns.git"
   },
   "keywords": [
     "blahdns"
@@ -18,9 +18,9 @@
   "author": "fun-ed",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ookanzheng/blahdns/issues"
+    "url": "https://github.com/fun-ed/blahdns/issues"
   },
-  "homepage": "https://github.com/ookanzheng/blahdns#readme",
+  "homepage": "https://github.com/fun-ed/blahdns#readme",
   "dependencies": {
     "abort-controller": "^2.0.3",
     "cors": "^2.8.5",

@@ -6,11 +6,11 @@
 
 ## Repository moved
 
-> The original GitHub account `zoonderkins`was suspended by GitHub, so `github.com/zoonderkins/blahdns` is no longer reachable.
+> The original GitHub account `zoonderkins` was suspended by GitHub, so `github.com/zoonderkins/blahdns` is no longer reachable.
 > This project is now maintained at [github.com/fun-ed/blahdns](https://github.com/fun-ed/blahdns), re-published with the full commit history.
 > Issues, gists, and stars from the old account could not be migrated.
 >
-> 原 GitHub 帳號 `zoonderkins`遭 GitHub 停權，原 repo 已無法存取；本專案改由 `fun-ed` 帳號重新公開，並保留完整 commit 歷史。舊帳號的 issues、gists 與 stars 無法搬移。
+> 原 GitHub 帳號 `zoonderkins` 遭 GitHub 停權，原 repo 已無法存取；本專案改由 `fun-ed` 帳號重新公開，並保留完整 commit 歷史。舊帳號的 issues、gists 與 stars 無法搬移。
 
 ## Announcements
 
