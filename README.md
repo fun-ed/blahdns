@@ -14,7 +14,7 @@
 
 ## Announcements
 
-* `.eth` names work again through our own ENS gateway, and the Alfis TLDs are now resolved by our own Alfis node. (2026/10/14)
+* `.eth` names work again through our own ENS gateway (plain HTTP only, e.g. http://matoken.eth/; [setup guide](client-conf/eth.md)), and the Alfis TLDs are now resolved by our own Alfis node. (2026/10/14)
 * Japan, Switzerland and Finland servers were discontinued on 2024-07-15; their old configs are in [Archived/legacy-servers](Archived/legacy-servers/README.md).
 * DNS-over-HTTPS accepts POST requests only (RFC 8484 wire format). DNS-over-TLS is served on port 853 only. (2026/10/14)
 * Our DNS service has been blocked due to Taiwan RPZ policy
@@ -69,13 +69,14 @@ Special zones in the resolver:
 
 * **OpenNIC TLDs** (`.oss`, `.geek`, ...): forwarded to OpenNIC.
 * **Alfis TLDs** (`.anon .btn .conf .index .merch .mirror .mob .screen .srv .ygg`): resolved by our own [Alfis](https://github.com/Revertron/Alfis) node (blockchain DNS) in Germany; the Singapore resolver forwards these TLDs to Germany over DNS-over-TLS. These names are not DNSSEC-signed. Example: http://mesh.ygg/ (needs a [Yggdrasil](client-conf/yggdrasil.md) connection to open the site).
-* **`.eth` (ENS)**: every `.eth` name resolves (A/AAAA only) to the BlahDNS ENS gateway. The gateway reads the name's ENS content hash from Ethereum and serves the IPFS site over plain HTTP, because no public CA issues certificates for `.eth`. Built on eth.limo's open-source [dweb-proxy-api](https://github.com/ethlimo/dweb-proxy-api) and IPFS [Rainbow](https://github.com/ipfs/rainbow). Example: http://matoken.eth/.
+* **`.eth` (ENS)**: every `.eth` name resolves (A/AAAA only) to the BlahDNS ENS gateway. The gateway reads the name's ENS content hash from Ethereum and serves the IPFS site over **plain HTTP only**: no public CA issues certificates for `.eth`, so `https://<name>.eth` is refused, and there is no HTTPS mirror under `blahdns.com`. Built on eth.limo's open-source [dweb-proxy-api](https://github.com/ethlimo/dweb-proxy-api) and IPFS [Rainbow](https://github.com/ipfs/rainbow). Example: http://matoken.eth/. Browser setup: [client-conf/eth.md](client-conf/eth.md).
 
 The DoT, DoH and DoQ endpoints are also reachable over the [Yggdrasil network](client-conf/yggdrasil.md).
 
 ## Config file / Client
 * Collection of blocklist use in BlahDNS: [Source](https://github.com/fun-ed/blahdns/raw/master/hosts/source.txt) 
 * Yggdrasil IPv6 Network: [Setup guide](https://github.com/fun-ed/blahdns/blob/master/client-conf/yggdrasil.md)
+* `.eth` (ENS) sites: [Setup guide](https://github.com/fun-ed/blahdns/blob/master/client-conf/eth.md)
 * Android DoH/DoT: [Nebulo App](https://play.google.com/store/apps/details?id=com.frostnerd.smokescreen) | [personalDNSfilter App](https://zenz-solutions.de/personaldnsfilter/) | [Intra](https://play.google.com/store/apps/details?id=app.intra)
 * iOS Dnscryptv2/DoH: [Dnscloak](https://itunes.apple.com/app/dnscloak-secure-dns-client/id1452162351)
 * Dnscryptv2: [dnscrypt-proxy](https://github.com/DNSCrypt/dnscrypt-proxy)
