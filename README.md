@@ -14,6 +14,7 @@
 
 ## Announcements
 
+* `.eth` names work again through our own ENS gateway, and the Alfis TLDs are now resolved by our own Alfis node. (2026/10/14)
 * Japan, Switzerland and Finland servers were discontinued on 2024-07-15; their old configs are in [Archived/legacy-servers](Archived/legacy-servers/README.md).
 * DNS-over-HTTPS accepts POST requests only (RFC 8484 wire format). DNS-over-TLS is served on port 853 only. (2026/10/14)
 * Our DNS service has been blocked due to Taiwan RPZ policy
@@ -37,17 +38,40 @@ Config: [HERE for more details](https://github.com/fun-ed/blahdns/tree/master/se
 
 ## Server architecture
 
-```bash
-Server
+Every public resolver (Germany, Singapore) runs the same stack:
 
-|-- Knot-resolver (DNS resolver, OpenNIC, ICANN, Alfis)
-|-- Dnsdist
-|   |   |-- DNSCryptv2 (encrypted-dns-server, port 8443 TCP/UDP)
-|   |   |-- DoQ, port 784
-|   |   |-- DoH/2, DoH/3 UDP port 443 (Post, Get)
-|   |   |-- DoT, port 853 TCP
-
+```mermaid
+flowchart LR
+  C[Client] -->|DoT 853/tcp| DD[dnsdist<br/>Lua config]
+  C -->|DoH HTTP/2 443/tcp<br/>DoH HTTP/3 443/udp| DD
+  C -->|DoQ 784/udp| DD
+  C -->|DNS over DTLS 853/udp| RD[RouteDNS]
+  C -->|DNSCrypt v2 8443 tcp/udp| ED[encrypted-dns-server]
+  DD --> F[Filtering layer<br/>blocklists + allowlists]
+  RD --> F
+  ED --> F
+  F --> K[Knot Resolver]
+  K -->|recursion + DNSSEC| ICANN[(ICANN DNS)]
+  K --> ON[OpenNIC TLDs]
+  K --> AL[Alfis TLDs<br/>.ygg .anon ...]
+  K --> ETH[.eth<br/>BlahDNS ENS gateway]
 ```
+
+| Layer | Software | What it does |
+|---|---|---|
+| Encrypted frontends | [dnsdist](https://dnsdist.org/) (Lua config) | DNS-over-TLS on 853/tcp, DNS-over-HTTPS on 443 (HTTP/2 and HTTP/3, POST only), DNS-over-QUIC on 784/udp. Drops ANY and CHAOS queries, per-client rate limits, packet cache |
+| | [RouteDNS](https://github.com/folbricht/routedns) | DNS over DTLS on 853/udp |
+| | [encrypted-dns-server](https://github.com/DNSCrypt/encrypted-dns-server) | DNSCrypt v2 on 8443 tcp/udp |
+| Filtering layer | blocklists + allowlists | Blocks trackers, ads, malware and phishing using the lists in [hosts/source.txt](hosts/source.txt) plus our own black/whitelists. Blocked names answer `0.0.0.0` / `::`. No query log |
+| Recursive resolver | [Knot Resolver](https://github.com/CZ-NIC/knot-resolver) | Full recursion with DNSSEC validation, no ECS. Special zones below |
+
+Special zones in the resolver:
+
+* **OpenNIC TLDs** (`.oss`, `.geek`, ...): forwarded to OpenNIC.
+* **Alfis TLDs** (`.anon .btn .conf .index .merch .mirror .mob .screen .srv .ygg`): resolved by our own [Alfis](https://github.com/Revertron/Alfis) node (blockchain DNS) in Germany; the Singapore resolver forwards these TLDs to Germany over DNS-over-TLS. These names are not DNSSEC-signed. Example: http://mesh.ygg/ (needs a [Yggdrasil](client-conf/yggdrasil.md) connection to open the site).
+* **`.eth` (ENS)**: every `.eth` name resolves (A/AAAA only) to the BlahDNS ENS gateway. The gateway reads the name's ENS content hash from Ethereum and serves the IPFS site over plain HTTP, because no public CA issues certificates for `.eth`. Built on eth.limo's open-source [dweb-proxy-api](https://github.com/ethlimo/dweb-proxy-api) and IPFS [Rainbow](https://github.com/ipfs/rainbow). Example: http://matoken.eth/.
+
+The DoT, DoH and DoQ endpoints are also reachable over the [Yggdrasil network](client-conf/yggdrasil.md).
 
 ## Config file / Client
 * Collection of blocklist use in BlahDNS: [Source](https://github.com/fun-ed/blahdns/raw/master/hosts/source.txt) 
